@@ -6,13 +6,14 @@ API REST para planejamento de viagens construída com Spring Boot. Fornece recur
 - Java 17+
 - Spring Boot
 - Spring Web, Spring Security, Spring Data JPA
+- MySQL
 - OpenAPI/Swagger
 - Gradle
 - Docker
 
 ## Estrutura do projeto
 ```
-first-spring-app/
+trip-planner-api/
   ├─ src/
   │  ├─ main/java/com/mateus/trip_planner_api/
   │  │  ├─ configuration/      
@@ -33,13 +34,13 @@ first-spring-app/
 
 ## Pré-requisitos
 - Java 17+ instalado
-- Docker e Docker Compose (opcionais)
+- MySQL 8.0+
+- Docker e Docker Compose
 
 ## Como executar
 ### 1) Ambiente de desenvolvimento (Gradle)
 No Windows PowerShell:
 ```bash
-# na raiz do projeto (first-spring-app/)
 .\gradlew.bat bootRun
 ```
 Linux/macOS:
@@ -74,14 +75,13 @@ java -jar build/libs/trip-planner-api-0.0.1-SNAPSHOT.jar
 ### 4) Docker
 Build da imagem:
 ```bash
-# na raiz do projeto (first-spring-app/)
 docker build -t trip-planner-api:latest .
 ```
 Executar com Docker Compose:
 ```bash
 docker compose up -d
 ```
-A API ficará disponível em `http://localhost:8080` (ajuste portas se necessário no `docker-compose.yml`).
+A API ficará disponível em `http://localhost:8080`
 
 ## Configuração
 As propriedades padrão ficam em `src/main/resources/application.properties`.
